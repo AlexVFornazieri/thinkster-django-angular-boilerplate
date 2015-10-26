@@ -7,7 +7,7 @@ from authentication.serializers import AccountSerializer
 
 from django.contrib.auth import authenticate, login
 
-import json
+import simplejson as json
 
 
 class AccountViewSet(viewsets.ModelViewSet):
@@ -40,6 +40,7 @@ class AccountViewSet(viewsets.ModelViewSet):
 
 class LoginView(views.APIView):
     def post(self, request, format=None):
+
         data = json.loads(request.body)
 
         email = data.get('email', None)

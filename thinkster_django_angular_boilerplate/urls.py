@@ -4,7 +4,7 @@ from thinkster_django_angular_boilerplate.views import IndexView
 
 from rest_framework_nested import routers
 
-from authentication.views import AccountViewSet
+from authentication.views import AccountViewSet, LoginView
 
 router = routers.SimpleRouter()
 router.register(r'accounts', AccountViewSet)
