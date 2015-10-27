@@ -5,8 +5,10 @@
     .module('thinkster', [
         'thinkster.config',
         'thinkster.routes',
+        'thinkster.utils',
         'thinkster.layout',
-        'thinkster.authentication'
+        'thinkster.authentication',
+        'thinkster.posts'
     ]);
 
   angular.module('thinkster.routes', ['ngRoute']);
