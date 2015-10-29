@@ -9,13 +9,13 @@
     .module('thinkster.posts.services')
     .factory('Posts', Posts);
 
-  Posts.$inject = ['$http'];
+  Posts.$inject = ['$http', 'Authentication'];
 
   /**
   * @namespace Posts
   * @returns {Factory}
   */
-  function Posts($http) {
+  function Posts($http, Authentication) {
     var Posts = {
       all: all,
       create: create,
@@ -46,7 +46,10 @@
     */
     function create(content) {
       return $http.post('/api/v1/posts/', {
-        content: content
+        content: content,
+        author: {
+          username: Authentication.getAuthenticatedAccount().username
+        }
       });
     }
 

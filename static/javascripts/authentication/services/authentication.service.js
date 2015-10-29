@@ -13,7 +13,7 @@
 
   /**
   * @namespace Authentication
-  * @returns {Factory}
+  * @returns {{getAuthenticatedAccount: thinkster.authentication.services.Authentication.getAuthenticatedAccount, isAuthenticated: thinkster.authentication.services.Authentication.isAuthenticated, login: thinkster.authentication.services.Authentication.login, logout: thinkster.authentication.services.Authentication.logout, register: thinkster.authentication.services.Authentication.register, setAuthenticatedAccount: thinkster.authentication.services.Authentication.setAuthenticatedAccount, unauthenticate: thinkster.authentication.services.Authentication.unauthenticate}}
   */
   function Authentication($cookies, $http) {
     /**
@@ -112,6 +112,7 @@
 
       return JSON.parse($cookies.authenticatedAccount);
     }
+
 
     /**
      * @name isAuthenticated

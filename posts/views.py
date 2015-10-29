@@ -5,6 +5,7 @@ from posts.permissions import IsAuthorOfPost
 from posts.serializers import PostSerializer
 from posts.models import Post
 
+
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.order_by('-created_at')
     serializer_class = PostSerializer
