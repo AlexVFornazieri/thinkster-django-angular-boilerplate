@@ -121,7 +121,7 @@
      * @memberOf thinkster.authentication.services.Authentication
      */
     function isAuthenticated() {
-      return !!$cookies.authenticatedAccount;
+      return $cookies.authenticatedAccount;
     }
 
     /**
