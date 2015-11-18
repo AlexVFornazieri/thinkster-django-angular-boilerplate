@@ -15,7 +15,7 @@
   * @namespace Posts
   * @returns {Factory}
   */
-  function Posts($http, Authentication) {
+  function Posts($http) {
     var Posts = {
       all: all,
       create: create,
@@ -46,10 +46,7 @@
     */
     function create(content) {
       return $http.post('/api/v1/posts/', {
-        content: content,
-        author: {
-          username: Authentication.getAuthenticatedAccount().username
-        }
+        content: content
       });
     }
 
